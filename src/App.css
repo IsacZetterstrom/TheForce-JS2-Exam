@@ -10,14 +10,13 @@
   grid-template-rows: 25% 10% 55%;
 }
 .headerText{
-  margin: 2em;
+  margin: 1em;
   color: rgb(131, 30, 50);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: 'Poller One', cursive;
   text-align: center;
   text-shadow: 0 -.1em 15px rgb(131, 30, 50);
-  top: 5.5em;
 }
 .main-nav{
   display: flex;
@@ -31,7 +30,6 @@
   background-color: rgb(43, 43, 43);
   box-shadow: 1px 1px 2px rgb(122, 44, 44);
   color: rgb(202, 209, 209);
-  /* border-style: none; */
   border: 1px solid rgba(122, 44, 44, 0);
   margin: .2em;
   border-radius: .5em;
