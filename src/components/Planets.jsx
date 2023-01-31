@@ -22,7 +22,7 @@ const Planets = () => {
 
     return(
         <div className="subcatagory-container">
-        {PlanetsBank.map((planet) => <button className="Planets-subcategory submenu-btns">{planet.name}</button>)}
+        {PlanetsBank.map((planet) => <button className="Planets-subcategory submenu-btns" key={planet.name}>{planet.name}</button>)}
         </div>
     )
 }

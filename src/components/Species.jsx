@@ -22,7 +22,7 @@ const Species = () => {
 
     return(
         <div className="subcatagory-container">
-        {SpeciesBank.map((specie) => <button className="species-subcategory submenu-btns">{specie.name}</button>)}
+        {SpeciesBank.map((specie) => <button className="species-subcategory submenu-btns" key={specie.name} >{specie.name}</button>)}
         </div>
     )
 }

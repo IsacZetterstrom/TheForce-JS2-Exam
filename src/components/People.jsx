@@ -22,7 +22,7 @@ const People = () => {
 
     return(
         <div className="subcatagory-container">
-        {PeopleBank.map((person) => <button className="people-subcategory submenu-btns">{person.name}</button>)}
+        {PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name}>{person.name}</button>)}
         </div>
     )
 }

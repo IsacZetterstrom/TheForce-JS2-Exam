@@ -22,7 +22,7 @@ const Films = () => {
 
     return(
         <div className="subcatagory-container">
-        {FilmsBank.map((film) => <button className="Films-subcategory submenu-btns">{film.title}</button>)}
+        {FilmsBank.map((film) => <button className="Films-subcategory submenu-btns" key={film.title}>{film.title}</button>)}
         </div>
     )
 }

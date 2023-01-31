@@ -1,13 +1,13 @@
 
 .App {
+  display: grid;
+  grid-template-rows: 25% 10% 55%;
   background-image: url(/public/assets/starwars.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: rgb(8, 5, 5);
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-rows: 25% 10% 55%;
 }
 .headerText{
   margin: 1em;

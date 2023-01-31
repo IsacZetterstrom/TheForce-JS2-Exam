@@ -22,7 +22,7 @@ const Starships = () => {
 
     return(
         <div className="subcatagory-container">
-        {StarshipsBank.map((starship) => <button className="Starships-subcategory submenu-btns">{starship.name}</button>)}
+        {StarshipsBank.map((starship) => <button className="Starships-subcategory submenu-btns" key={starship.name}>{starship.name}</button>)}
         </div>
     )
 }
