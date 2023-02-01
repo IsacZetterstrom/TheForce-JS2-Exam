@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import '../App.css';
 
 const Planets = () => {
-    const [ PlanetsBank, setPlanetsBank ] = useState([]);
+    const [ planetsBank, setPlanetsBank ] = useState([]);
     useEffect(() => {
-        FetchPlanets();
+        fetchPlanets();
     },[]);
-    const FetchPlanets = async () =>  {
+    const fetchPlanets = async () =>  {
         
         let promises = []
         let currentPage = 1;
@@ -19,10 +19,14 @@ const Planets = () => {
         let results = result.map(data => data.results)
         setPlanetsBank([].concat(...results));
     }
+    const handleClick = (planetInfo) => {
+        console.log(planetInfo)
+    }
 
     return(
         <div className="subcatagory-container">
-        {PlanetsBank.map((planet) => <button className="Planets-subcategory submenu-btns" key={planet.name}>{planet.name}</button>)}
+        {planetsBank.map((planet) => <button className="Planets-subcategory submenu-btns" 
+        key={planet.name} onClick={() => handleClick(planet)}>{planet.name}</button>)}
         </div>
     )
 }

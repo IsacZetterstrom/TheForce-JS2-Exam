@@ -18,11 +18,21 @@
   text-align: center;
   text-shadow: 0 -.1em 15px rgb(131, 30, 50);
 }
+.HomeText{
+  margin: 1em;
+  color: rgb(131, 30, 50);
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Poller One', cursive;
+  text-align: center;
+  text-shadow: 0 -.1em 15px rgb(131, 30, 50);
+}
 .main-nav{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 .menu-btns{
   padding: .5em 1em;
@@ -38,9 +48,17 @@
   letter-spacing: .070em;
   font-weight: 600;
   transition: all .3s;
+
+
 }
-.menu-btns:hover{
-  border: 2px solid rgb(118, 150, 137);
+.menu-btns:hover, .submenu-btns:hover{
+  /* border: 2px solid rgb(118, 150, 137); */
+  box-shadow: 0 0 10px rgb(122, 44, 44);
+
+}
+.menu-btns:active, .submenu-btns:active{
+  box-shadow: 0 0 15px rgb(122, 44, 44);
+
 }
 .subcatagory-container{
   overflow: scroll;
@@ -68,6 +86,7 @@
   letter-spacing: .070em;
   font-weight: 600;
   transition: all .3s;
+  -webkit-tap-highlight-color: transparent;
 
 
 }

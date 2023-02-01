@@ -19,10 +19,14 @@ const Starships = () => {
         let results = result.map(data => data.results)
         setStarshipsBank([].concat(...results));
     }
+    const HandleClick = (starshipInfo) => {
+        console.log(starshipInfo)
+    }
 
     return(
         <div className="subcatagory-container">
-        {StarshipsBank.map((starship) => <button className="Starships-subcategory submenu-btns" key={starship.name}>{starship.name}</button>)}
+        {StarshipsBank.map((starship) => <button className="Starships-subcategory submenu-btns" 
+        key={starship.name} onClick={() => HandleClick(starship)}>{starship.name} </button>)}
         </div>
     )
 }

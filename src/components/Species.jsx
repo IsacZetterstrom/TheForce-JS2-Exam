@@ -19,10 +19,14 @@ const Species = () => {
         let results = result.map(data => data.results)
         setSpeciesBank([].concat(...results));
     }
+    const HandleClick = (specieInfo) => {
+        console.log(specieInfo)
+    }
 
     return(
         <div className="subcatagory-container">
-        {SpeciesBank.map((specie) => <button className="species-subcategory submenu-btns" key={specie.name} >{specie.name}</button>)}
+        {SpeciesBank.map((specie) => <button className="species-subcategory submenu-btns" 
+        key={specie.name} onClick={() => HandleClick(specie)}>{specie.name}</button>)}
         </div>
     )
 }

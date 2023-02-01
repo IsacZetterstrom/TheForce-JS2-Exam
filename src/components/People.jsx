@@ -17,12 +17,16 @@ const People = () => {
         }
         let result = await Promise.all(promises);
         let results = result.map(data => data.results)
-        setPeopleBank([].concat(...results));
+        setPeopleBank([].concat(...results));  
+    }
+
+    const HandleClick = (personInfo) => {
+        console.log(personInfo)
     }
 
     return(
         <div className="subcatagory-container">
-        {PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name}>{person.name}</button>)}
+        {PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() => HandleClick(person)} >{person.name}</button>)}
         </div>
     )
 }

@@ -19,10 +19,14 @@ const Vehicles = () => {
         let results = result.map(data => data.results)
         setVehiclesBank([].concat(...results));
     }
+    const HandleClick = (vehicleInfo) => {
+        console.log(vehicleInfo)
+    }
 
     return(
         <div className="subcatagory-container">
-        {VehiclesBank.map((vehicle) => <button className="Vehicles-subcategory submenu-btns" key={vehicle.name}>{vehicle.name}</button>)}
+        {VehiclesBank.map((vehicle) => <button className="Vehicles-subcategory submenu-btns" 
+        key={vehicle.name} onClick={() => HandleClick(vehicle)}>{vehicle.name}</button>)}
         </div>
     )
 }

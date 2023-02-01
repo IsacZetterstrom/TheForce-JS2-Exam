@@ -19,10 +19,14 @@ const Films = () => {
         let results = result.map(data => data.results)
         setFilmsBank([].concat(...results));
     }
+    const HandleClick = (filmInfo) => {
+        console.log(filmInfo)
+    }
 
     return(
         <div className="subcatagory-container">
-        {FilmsBank.map((film) => <button className="Films-subcategory submenu-btns" key={film.title}>{film.title}</button>)}
+        {FilmsBank.map((film) => <button className="Films-subcategory submenu-btns" 
+        key={film.title} onClick={() => HandleClick(film)}>{film.title}</button>)}
         </div>
     )
 }
