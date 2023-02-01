@@ -1,8 +1,14 @@
 import React, {useState, useEffect} from "react";
+import { BrowserRouter, Routes, Route, useNavigate, Outlet, Link } from 'react-router-dom';
+import  InfoCard  from './InfoCard';
 import '../App.css';
+let cardInfo = "";
 
-const People = () => {
+const People = (props) => {
+    
+    const navigate = useNavigate();
     const [ PeopleBank, setPeopleBank ] = useState([]);
+    const [ open, setOpen] = React.useState(false);
     useEffect(() => {
         FetchPeople();
     },[]);
@@ -21,13 +27,32 @@ const People = () => {
     }
 
     const HandleClick = (personInfo) => {
-        console.log(personInfo)
+        
+        cardInfo = `<h3>${personInfo.name}</h3>
+        <p>Height:${personInfo.height} cm</p>
+        <p>Weight:${personInfo.mass} kg</p>
+        <p>Hair color:${personInfo.hair_color}</p>
+        <p>Skin color:${personInfo.skin_color}</p>
+        <p>Eye color: ${personInfo.eye_color}</p>
+        <p>Birth year: ${personInfo.birth_year}</p>
+        <p>Gender: ${personInfo.gender}</p>`;
+
     }
 
     return(
-        <div className="subcatagory-container">
-        {PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() => HandleClick(person)} >{person.name}</button>)}
-        </div>
+        <>
+        {/* {cardInfo && <InfoCard data={cardInfo}/>} */}
+    
+            <div className="subcatagory-container">
+                {/* <Link to={{pathname:"/InfoCard", state: cardInfo}}>{PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() =>  HandleClick(person)}>{person.name}</button>)}</Link> */}
+                {/* <Link to={'/InfoCard'}>{PeopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() =>  HandleClick(person)}>{person.name}</button>)}</Link> */}
+                {/* <button className="people-subcategory submenu-btns" key={person.name} onClick={() =>  HandleClick(person)}>{person.name}</button>)} */}
+                {PeopleBank.map((person) => 
+                <button className="people-subcategory submenu-btns" key={person.name} onClick={() => HandleClick(person)}>{person.name}</button>)}
+                {/* <div dangerouslySetInnerHTML={{__html: cardInfo}}></div> */}
+            </div>
+        </>
+
     )
 }
 

@@ -1,4 +1,10 @@
+body{
 
+  background-color: black;
+}
+.whiteText{
+  color: white;
+}
 .App {
   display: grid;
   grid-template-rows: 25% 10% 55%;
@@ -88,3 +94,8 @@
 
 
 }
+
+
+/* .cardInfo-container {
+  height: 15em;
+} */
