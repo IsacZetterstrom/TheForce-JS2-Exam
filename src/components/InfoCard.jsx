@@ -7,14 +7,10 @@ import '../App.css';
 
 
 const InfoCard = (cardInfo) => {
-    const [state, setState] = useState({
-        data: ""
-      });
-
 console.log(cardInfo)
     return(
-        <div className="cardInfo-container">
-            <div dangerouslySetInnerHTML={{__html: cardInfo.data }}></div>
+        <div className="subcatagory-container">
+            <div className="whiteText" dangerouslySetInnerHTML={{__html: cardInfo.data }}></div>
             <button className="back-btn">go back ffs</button>
         </div>
     )

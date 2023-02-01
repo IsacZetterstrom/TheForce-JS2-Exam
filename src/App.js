@@ -23,12 +23,10 @@ function App() {
     <Navigation />
       <Routes>
       <Route path='/' element= {<Home />} />
-        {/* <Route path='/People' element= {<People />} >
-          <Route path='InfoCard' element={<InfoCard />} />
-        </Route> */}
-        <Route path='People' element= {<People />} />
+        <Route path='People' element= {<People />}>
         <Route path='InfoCard' element= {<InfoCard />} />
-          {/* <Route path='InfoCard' element={<InfoCard />} /> */}
+        </Route>
+        
         <Route path='Planets' element= {<Planets />} />
         <Route path='Species' element= {<Species />} />
         <Route path='Vehicles' element= {<Vehicles />} />
