@@ -5,7 +5,7 @@ import  InfoCard  from './InfoCard';
 
 const Vehicles = () => {
     const [ VehiclesBank, setVehiclesBank ] = useState([]);
-    const [ vehicleBank, setVehicleBank] = React.useState(false);
+    const [ vehicleBank, setVehicleBank] = useState([]);
 
     useEffect(() => {
         FetchVehicles();
@@ -40,7 +40,7 @@ const Vehicles = () => {
        {vehicleBank && <InfoCard data={vehicleBank}/>}
    
            <div className="subcatagory-container">
-               <Link to="InfoCard">{VehiclesBank.map((vehicle) => 
+               <Link className="link" to="InfoCard">{VehiclesBank.map((vehicle) => 
                <button className="vehicle-subcategory submenu-btns" key={vehicle.name} onClick={() => runHandleClick(vehicle)}>{vehicle.name}</button>)}</Link>
  
            </div>

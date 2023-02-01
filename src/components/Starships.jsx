@@ -5,7 +5,7 @@ import '../App.css';
 
 const Starships = () => {
     const [ StarshipsBank, setStarshipsBank ] = useState([]);
-    const [ starshipbank, setStarshipBank] = React.useState(false);
+    const [ starshipbank, setStarshipBank] = useState([]);
 
     useEffect(() => {
         FetchStarships();
@@ -44,7 +44,7 @@ const Starships = () => {
        {starshipbank && <InfoCard data={starshipbank}/>}
    
            <div className="subcatagory-container">
-               <Link to="InfoCard">{StarshipsBank.map((starships) => 
+               <Link className="link" to="InfoCard">{StarshipsBank.map((starships) => 
                <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}</Link>
                
            </div>

@@ -5,7 +5,7 @@ import '../App.css';
 
 const Planets = () => {
     const [ planetsBank, setPlanetsBank ] = useState([]);
-    const [ planetBank, setPlanetBank] = React.useState(false);
+    const [ planetBank, setPlanetBank] = useState([]);
 
     useEffect(() => {
         fetchPlanets();
@@ -37,12 +37,17 @@ const Planets = () => {
 
    return(
        <>
-       {planetBank && <InfoCard data={planetBank}/>}
-   
+       {/* {planetBank && <InfoCard data={planetBank}/>}  */}
+       <div className="information-container">
+            <div className="info-text" dangerouslySetInnerHTML={{__html: planetBank}}></div>
+            </div>
            <div className="subcatagory-container">
-               <Link to="InfoCard">{planetsBank.map((planet) => 
+               <Link className="link" to="InfoCard">{planetsBank.map((planet) => 
                <button className="planet-subcategory submenu-btns" key={planet.name} onClick={() => runHandleClick(planet)}>{planet.name}</button>)}</Link>
-               
+               {planetBank}
+               <div className="">infoContainer
+                
+               </div>
            </div>
        </>
 

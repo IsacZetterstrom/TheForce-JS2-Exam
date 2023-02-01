@@ -5,7 +5,7 @@ import '../App.css';
 
 const Films = () => {
     const [ filmsBank, setFilmsBank ] = useState([]);
-    const [ filmBank, setfilmBank] = React.useState(false);
+    const [ filmBank, setfilmBank] = useState([]);
 
     useEffect(() => {
         fetchFilms();
@@ -37,7 +37,7 @@ const Films = () => {
        {filmBank && <InfoCard data={filmBank}/>}
    
            <div className="subcatagory-container">
-               <Link to="InfoCard">{filmsBank.map((film) => 
+               <Link className="link" to="InfoCard">{filmsBank.map((film) => 
                <button className="people-subcategory submenu-btns" key={film.title} onClick={() => runHandleClick(film)}>{film.title}</button>)}</Link>
                
            </div>

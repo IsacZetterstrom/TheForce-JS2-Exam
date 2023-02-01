@@ -7,7 +7,7 @@ import '../App.css';
 const People = (props) => {
     
     const [ peopleBank, setPeopleBank ] = useState([]);
-    const [ personBank, setpersonBank] = React.useState(false);
+    const [ personBank, setpersonBank] = useState([]);
 
     useEffect(() => {
         fetchPeople();
@@ -31,7 +31,7 @@ const People = (props) => {
          setpersonBank (`<h3>${personInfo.name}</h3>
         <p>Height: ${personInfo.height} cm</p>
         <p>Weight: ${personInfo.mass} kg</p>
-        <p>Hair color :${personInfo.hair_color}</p>
+        <p>Hair color: ${personInfo.hair_color}</p> 
         <p>Skin color: ${personInfo.skin_color}</p>
         <p>Eye color: ${personInfo.eye_color}</p>
         <p>Birth year: ${personInfo.birth_year}</p>
@@ -41,15 +41,14 @@ const People = (props) => {
 
     return(
         <>
-        {personBank && <InfoCard data={personBank}/>}
-    
+    <div className="information-container">
+            <div className="info-text" dangerouslySetInnerHTML={{__html: personBank}}></div>
+            </div>
             <div className="subcatagory-container">
-                <Link to="InfoCard">{peopleBank.map((person) => 
-                <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}</Link>
-                
+                <Link className="link" to="InfoCard">{peopleBank.map((person) => 
+                <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}</Link>         
             </div>
         </>
-
     )
 }
 

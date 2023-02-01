@@ -5,7 +5,7 @@ import '../App.css';
 
 const Species = () => {
     const [ speciesBank, setSpeciesBank ] = useState([]);
-    const [ specieBank, setSpecieBank] = React.useState(false);
+    const [ specieBank, setSpecieBank] = useState([]);
 
     useEffect(() => {
         fetchFilms();
@@ -41,7 +41,7 @@ const Species = () => {
        {specieBank && <InfoCard data={specieBank}/>}
    
            <div className="subcatagory-container">
-               <Link to="InfoCard">{speciesBank.map((species) => 
+               <Link className="link" to="InfoCard">{speciesBank.map((species) => 
                <button className="species-subcategory submenu-btns" key={species.name} onClick={() => runHandleClick(species)}>{species.name}</button>)}</Link>
                
            </div>
