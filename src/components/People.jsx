@@ -1,23 +1,25 @@
 import React, {useState, useEffect} from "react";
-import { BrowserRouter, Routes, Route, useNavigate, Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import  InfoCard  from './InfoCard';
 import '../App.css';
 
 
 const People = (props) => {
     
-    const [ PeopleBank, setPeopleBank ] = useState([]);
+    const [ peopleBank, setPeopleBank ] = useState([]);
     const [ personBank, setpersonBank] = React.useState(false);
+
     useEffect(() => {
-        FetchPeople();
+        fetchPeople();
     },[]);
-    const FetchPeople = async () =>  {
+    
+    const fetchPeople = async () =>  {
         
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 9; i++) {
             promises.push(fetch(`https://swapi.dev/api/people/?page=${currentPage}`)
-            .then(response => response.json())) //kolla mer på promise / promise all
+            .then(response => response.json()))
             currentPage++;
         }
         let result = await Promise.all(promises);
@@ -27,10 +29,10 @@ const People = (props) => {
 
     const runHandleClick = (personInfo) => {
          setpersonBank (`<h3>${personInfo.name}</h3>
-        <p>Height:${personInfo.height} cm</p>
-        <p>Weight:${personInfo.mass} kg</p>
-        <p>Hair color:${personInfo.hair_color}</p>
-        <p>Skin color:${personInfo.skin_color}</p>
+        <p>Height: ${personInfo.height} cm</p>
+        <p>Weight: ${personInfo.mass} kg</p>
+        <p>Hair color :${personInfo.hair_color}</p>
+        <p>Skin color: ${personInfo.skin_color}</p>
         <p>Eye color: ${personInfo.eye_color}</p>
         <p>Birth year: ${personInfo.birth_year}</p>
         <p>Gender: ${personInfo.gender}</p>`) 
@@ -42,7 +44,7 @@ const People = (props) => {
         {personBank && <InfoCard data={personBank}/>}
     
             <div className="subcatagory-container">
-                <Link to="InfoCard">{PeopleBank.map((person) => 
+                <Link to="InfoCard">{peopleBank.map((person) => 
                 <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}</Link>
                 
             </div>

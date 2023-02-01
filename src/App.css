@@ -73,6 +73,12 @@ body{
 .subcatagory-container::-webkit-scrollbar{
   display: none;
 }
+.information-container{
+  
+}
+.info-text{
+  /* border: 1px white; */
+}
 .submenu-btns{
   display: flex;
   flex-direction: column;
@@ -91,11 +97,5 @@ body{
   font-weight: 600;
   transition: all .3s;
   -webkit-tap-highlight-color: transparent;
-
-
 }
 
-
-/* .cardInfo-container {
-  height: 15em;
-} */

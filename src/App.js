@@ -27,11 +27,21 @@ function App() {
         <Route path='InfoCard' element= {<InfoCard />} />
         </Route>
         
-        <Route path='Planets' element= {<Planets />} />
-        <Route path='Species' element= {<Species />} />
-        <Route path='Vehicles' element= {<Vehicles />} />
-        <Route path='Starships' element= {<Starships />} />
-        <Route path='Films' element= {<Films />} />
+        <Route path='Planets' element= {<Planets />} >
+        <Route path='InfoCard' element= {<InfoCard />} />
+        </Route>
+        <Route path='Species' element= {<Species />} >
+        <Route path='InfoCard' element= {<InfoCard />} />
+        </Route>
+        <Route path='Vehicles' element= {<Vehicles />} >
+        <Route path='InfoCard' element= {<InfoCard />} />
+        </Route>
+        <Route path='Starships' element= {<Starships />} >
+        <Route path='InfoCard' element= {<InfoCard />} />
+        </Route>
+        <Route path='Films' element= {<Films />} >
+        <Route path='InfoCard' element= {<InfoCard />} />
+        </Route>
       </Routes>
     </main>
     </BrowserRouter>
