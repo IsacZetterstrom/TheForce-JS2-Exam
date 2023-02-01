@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
 body{
   background-color: black;
 }
@@ -30,7 +32,7 @@ body{
   margin: 1em;
   color: rgb(0, 0, 0);
   font-size: 2.5rem;
-  font-family: 'Poller One', cursive;
+  font-family: 'Star Wars', sans-serif;
   text-align: center;
   grid-column: 1/2;
   text-shadow: rgb(63, 25, 25) 1px 0 10px;
@@ -40,7 +42,7 @@ body{
   margin: 1em;
   color: rgb(131, 30, 50);
   font-size: 2rem;
-  font-family: 'Poller One', cursive;
+  font-family: 'Star Wars', sans-serif;
   text-align: center;
   text-shadow: 0 -.1em 15px rgb(131, 30, 50);
 }
@@ -52,6 +54,7 @@ body{
   -webkit-tap-highlight-color: transparent;
 }
 .menu-btns{
+  font-family: 'Star Wars', sans-serif;
   padding: .5em 1em;
   min-width: 5em;
   background-color: rgb(116, 12, 12);
@@ -59,9 +62,9 @@ body{
   box-shadow: 1px 1px 2px rgb(122, 44, 44);
   border: 1px solid rgba(112, 177, 163, 0.238);
   color: rgb(212, 212, 212);
+  font-size: 1.2em;
   margin: .2em;
   border-radius: .5em;
-  font-size: 1.1rem;
   cursor: pointer;
   letter-spacing: .070em;
   font-weight: 600;
@@ -104,7 +107,7 @@ body{
   scrollbar-width: none;
 }
 .subcatagory-container::-webkit-scrollbar{
-  /* display: none; */
+  display: none;
 }
 .information-container{
   margin: 0 auto;
@@ -128,7 +131,7 @@ body{
   color: rgb(255, 255, 255);
   line-height: 1.5em;
   font-size: .7rem;
-  font-family: sans-serif;
+  font-family: 'Star Wars', sans-serif;
   letter-spacing: .2em;
   position: relative;
   padding-left: 1em;
@@ -155,6 +158,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Star Wars', sans-serif;
   margin: .5em auto;
   justify-content: center;
   padding: .5em 1em;
@@ -163,7 +167,7 @@ body{
   border: 1px solid rgba(122, 44, 44, 0);
   border-radius: .5em;
   width: 80%;
-  font-size: .7rem;
+  font-size: .6rem;
   cursor: pointer;
   letter-spacing: .070em;
   font-weight: 600;
@@ -199,7 +203,7 @@ body{
   }
   .menu-btns{
     min-width: 2em;
-    font-size: .9em;
+    font-size: .7em;
   }
 }
   @media screen and (min-width: 978px){
