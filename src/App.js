@@ -26,7 +26,6 @@ function App() {
         <Route path='People' element= {<People />}>
         <Route path='InfoCard' element= {<InfoCard />} />
         </Route>
-        
         <Route path='Planets' element= {<Planets />} >
         <Route path='InfoCard' element= {<InfoCard />} />
         </Route>

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import '../App.css';
-import  InfoCard  from './InfoCard';
 
 const Vehicles = () => {
-    const [ VehiclesBank, setVehiclesBank ] = useState([]);
+    const [ vehiclesBank, setVehiclesBank ] = useState([]);
     const [ vehicleBank, setVehicleBank] = useState([]);
 
     useEffect(() => {
@@ -37,10 +36,11 @@ const Vehicles = () => {
 
    return(
        <>
-       {vehicleBank && <InfoCard data={vehicleBank}/>}
-   
+        <div className="information-container">
+            <div className="info-text" dangerouslySetInnerHTML={{__html: vehicleBank}}></div>
+            </div>
            <div className="subcatagory-container">
-               <Link className="link" to="InfoCard">{VehiclesBank.map((vehicle) => 
+               <Link className="link" to="InfoCard">{vehiclesBank.map((vehicle) => 
                <button className="vehicle-subcategory submenu-btns" key={vehicle.name} onClick={() => runHandleClick(vehicle)}>{vehicle.name}</button>)}</Link>
  
            </div>

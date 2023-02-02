@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import  InfoCard  from './InfoCard';
 import '../App.css';
 
 const Starships = () => {
     const [ StarshipsBank, setStarshipsBank ] = useState([]);
-    const [ starshipbank, setStarshipBank] = useState([]);
+    const [ starshipBank, setStarshipBank] = useState([]);
 
     useEffect(() => {
         FetchStarships();
@@ -41,8 +40,9 @@ const Starships = () => {
 
    return(
        <>
-       {starshipbank && <InfoCard data={starshipbank}/>}
-   
+            <div className="information-container">
+            <div className="info-text" dangerouslySetInnerHTML={{__html: starshipBank}}></div>
+            </div>
            <div className="subcatagory-container">
                <Link className="link" to="InfoCard">{StarshipsBank.map((starships) => 
                <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}</Link>

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import  InfoCard  from './InfoCard';
 import '../App.css';
 
 const Planets = () => {
@@ -37,17 +36,12 @@ const Planets = () => {
 
    return(
        <>
-       {/* {planetBank && <InfoCard data={planetBank}/>}  */}
        <div className="information-container">
             <div className="info-text" dangerouslySetInnerHTML={{__html: planetBank}}></div>
             </div>
            <div className="subcatagory-container">
                <Link className="link" to="InfoCard">{planetsBank.map((planet) => 
                <button className="planet-subcategory submenu-btns" key={planet.name} onClick={() => runHandleClick(planet)}>{planet.name}</button>)}</Link>
-               {planetBank}
-               <div className="">infoContainer
-                
-               </div>
            </div>
        </>
 
