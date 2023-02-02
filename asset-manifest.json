@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TheForce-JS2-Exam/static/css/main.3855c1de.css",
+    "main.js": "/TheForce-JS2-Exam/static/js/main.67322177.js",
+    "static/media/starwars.jpg": "/TheForce-JS2-Exam/static/media/starwars.5aeb4bc5cf78961c1266.jpg",
+    "index.html": "/TheForce-JS2-Exam/index.html",
+    "main.3855c1de.css.map": "/TheForce-JS2-Exam/static/css/main.3855c1de.css.map",
+    "main.67322177.js.map": "/TheForce-JS2-Exam/static/js/main.67322177.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3855c1de.css",
+    "static/js/main.67322177.js"
+  ]
+}
