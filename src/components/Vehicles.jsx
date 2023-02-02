@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Vehicles = () => {
@@ -7,10 +6,10 @@ const Vehicles = () => {
     const [ vehicleBank, setVehicleBank] = useState([]);
 
     useEffect(() => {
-        FetchVehicles();
+        fetchVehicles();
     },[]);
     
-    const FetchVehicles = async () =>  {
+    const fetchVehicles = async () =>  {
         
         let promises = []
         let currentPage = 1;
@@ -40,8 +39,7 @@ const Vehicles = () => {
             <div className="info-text" dangerouslySetInnerHTML={{__html: vehicleBank}}></div>
             </div>
            <div className="subcatagory-container">
-               <Link className="link" to="InfoCard">{vehiclesBank.map((vehicle) => 
-               <button className="vehicle-subcategory submenu-btns" key={vehicle.name} onClick={() => runHandleClick(vehicle)}>{vehicle.name}</button>)}</Link>
+            {vehiclesBank.map((vehicle) => <button className="vehicle-subcategory submenu-btns" key={vehicle.name} onClick={() => runHandleClick(vehicle)}>{vehicle.name}</button>)}
  
            </div>
        </>

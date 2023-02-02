@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Starships = () => {
@@ -7,10 +6,10 @@ const Starships = () => {
     const [ starshipBank, setStarshipBank] = useState([]);
 
     useEffect(() => {
-        FetchStarships();
+        fetchStarships();
     },[]);
     
-    const FetchStarships = async () =>  {
+    const fetchStarships = async () =>  {
         
         let promises = []
         let currentPage = 1;
@@ -44,8 +43,7 @@ const Starships = () => {
             <div className="info-text" dangerouslySetInnerHTML={{__html: starshipBank}}></div>
             </div>
            <div className="subcatagory-container">
-               <Link className="link" to="InfoCard">{StarshipsBank.map((starships) => 
-               <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}</Link>
+            {StarshipsBank.map((starships) => <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}
                
            </div>
        </>

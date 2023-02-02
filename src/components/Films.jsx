@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Films = () => {
@@ -33,12 +32,11 @@ const Films = () => {
 
    return(
        <>
-                     <div className="information-container">
+            <div className="information-container">
             <div className="info-text" dangerouslySetInnerHTML={{__html: filmBank}}></div>
             </div>
            <div className="subcatagory-container">
-               <Link className="link" to="InfoCard">{filmsBank.map((film) => 
-               <button className="people-subcategory submenu-btns" key={film.title} onClick={() => runHandleClick(film)}>{film.title}</button>)}</Link>
+               {filmsBank.map((film) => <button className="people-subcategory submenu-btns" key={film.title} onClick={() => runHandleClick(film)}>{film.title}</button>)}
                
            </div>
        </>

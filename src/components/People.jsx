@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 
-const People = (props) => {
+const People = () => {
     
     const [ peopleBank, setPeopleBank ] = useState([]);
     const [ personBank, setpersonBank] = useState([]);
@@ -44,8 +43,7 @@ const People = (props) => {
             <div className="info-text" dangerouslySetInnerHTML={{__html: personBank}}></div>
             </div>
             <div className="subcatagory-container">
-                <Link className="link" to="InfoCard">{peopleBank.map((person) => 
-                <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}</Link>         
+            {peopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}       
             </div>
         </>
     )

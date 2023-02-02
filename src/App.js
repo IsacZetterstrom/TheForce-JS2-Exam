@@ -11,7 +11,7 @@ import Starships from './components/Starships';
 import Vehicles from './components/Vehicles';
 import Species from './components/Species';
 import Films from './components/Films';
-import InfoCard from './components/InfoCard';
+
 
 
 function App() {
@@ -23,24 +23,12 @@ function App() {
     <Navigation />
       <Routes>
       <Route path='/' element= {<Home />} />
-        <Route path='People' element= {<People />}>
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
-        <Route path='Planets' element= {<Planets />} >
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
-        <Route path='Species' element= {<Species />} >
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
-        <Route path='Vehicles' element= {<Vehicles />} >
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
-        <Route path='Starships' element= {<Starships />} >
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
-        <Route path='Films' element= {<Films />} >
-        <Route path='InfoCard' element= {<InfoCard />} />
-        </Route>
+        <Route path='People' element= {<People />} />
+        <Route path='Planets' element= {<Planets />} />
+        <Route path='Species' element= {<Species />} />
+        <Route path='Vehicles' element= {<Vehicles />} />
+        <Route path='Starships' element= {<Starships />} />
+        <Route path='Films' element= {<Films />} />
       </Routes>
     </main>
     </BrowserRouter>
