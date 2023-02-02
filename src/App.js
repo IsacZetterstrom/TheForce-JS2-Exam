@@ -11,6 +11,7 @@ import Starships from './components/Starships';
 import Vehicles from './components/Vehicles';
 import Species from './components/Species';
 import Films from './components/Films';
+import Search  from './components/Search';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='Vehicles' element= {<Vehicles />} />
         <Route path='Starships' element= {<Starships />} />
         <Route path='Films' element= {<Films />} />
+        <Route path='Search' element= {<Search />} />
       </Routes>
     </main>
     </BrowserRouter>
