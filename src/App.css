@@ -1,70 +1,226 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+body{
+  background-color: black;
+}
 
 .App {
+  display: grid;
+  margin: 0 auto;
+  grid-template-rows: 25% 15% 55%;
+  grid-template-columns: 50% 50%;
   background-image: url(/public/assets/starwars.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-color: black;
+  background-size: 100%;
+  background-color: rgb(8, 5, 5);
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-rows: 25% 10% 55%;
+}
+.welcome-container{
+  margin: 0 auto;
+  text-align: center;
+  grid-column: 1 / 3;
+  grid-row: 3/-2;
+}
+.header-container{
+  grid-column: 1 / 3;
+  grid-row: 1 / -4;
 }
 .headerText{
-  margin: 2em;
+  grid-column: 1 / 2;
+  grid-row: -2;
+  margin: 1em;
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
+  font-family: 'Star Wars', sans-serif;
+  text-align: center;
+  grid-column: 1/2;
+  text-shadow: rgb(63, 25, 25) 1px 0 10px;
+  -webkit-text-stroke: 2px rgb(123, 29, 29); /* width and color */
+}
+.HomeText{
+  margin: 1em;
   color: rgb(131, 30, 50);
   font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Poller One', cursive;
+  font-family: 'Star Wars', sans-serif;
   text-align: center;
   text-shadow: 0 -.1em 15px rgb(131, 30, 50);
-  top: 5.5em;
 }
 .main-nav{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 .menu-btns{
+  font-family: 'Star Wars', sans-serif;
   padding: .5em 1em;
-  background-color: rgb(43, 43, 43);
+  min-width: 5em;
+  background-color: rgb(116, 12, 12);
+  background-image: linear-gradient(to bottom right, rgb(87, 56, 56), rgb(108, 17, 17));
   box-shadow: 1px 1px 2px rgb(122, 44, 44);
-  color: rgb(202, 209, 209);
-  /* border-style: none; */
-  border: 1px solid rgba(122, 44, 44, 0);
+  border: 1px solid rgba(112, 177, 163, 0.238);
+  color: rgb(212, 212, 212);
+  font-size: 1.2em;
   margin: .2em;
   border-radius: .5em;
-  font-size: 1rem;
   cursor: pointer;
   letter-spacing: .070em;
   font-weight: 600;
   transition: all .3s;
+  position: relative;
+  overflow: hidden;
 }
-.menu-btns:hover{
-  border: 2px solid rgb(118, 150, 137);
+
+.menu-btns:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-color: rgb(202, 201, 201);
+  transform: translateX(-100%) rotate(45deg);
+  transition: all .3s;
 }
-.subcatagory-container{
-  overflow: scroll;
+
+.menu-btns:hover:before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+.menu-btns:hover {
+  background-color: rgb(97, 27, 27);
+  border: 1px solid rgb(87, 130, 121);
+  box-shadow: 0 0 5px rgb(122, 44, 44);
+}
+
+.menu-btns:active, .submenu-btns:active{
+  box-shadow: 0 0 15px rgb(122, 44, 44);
+  -webkit-tap-highlight-color: transparent;
 
 }
-.submenu-btns{
+.subcatagory-container{
+  grid-column: -2/-3;
   overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+.subcatagory-container::-webkit-scrollbar{
+  display: none;
+}
+.information-container{
+  margin: 0 auto;
+  background-color: black;
+  grid-column: 2 / 3;
+  grid-row: -2;
+  box-shadow: 0 0 15px rgb(122, 44, 44);
+  border-radius: 10px;
+  padding-top: .8em;
+  width: 80%;
+}
+.container-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / 3;
+  grid-row: 2 / -3;
+}
+
+.info-text{
+  color: rgb(255, 255, 255);
+  line-height: 1.5em;
+  font-size: .7rem;
+  font-family: 'Star Wars', sans-serif;
+  letter-spacing: .2em;
+  position: relative;
+  padding-left: 1em;
+}
+
+
+.information-container .info-text h3{
+  font-weight: 900;
+  color: rgb(131, 30, 50);
+
+  font-size: .8rem;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.information-container .info-text p{
+  color: rgb(131, 30, 50);
+  font-weight: 500;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.submenu-btns{
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Star Wars', sans-serif;
   margin: .5em auto;
+  justify-content: center;
   padding: .5em 1em;
-  background-color: rgb(43, 43, 43);
-  box-shadow: 1px 1px 2px rgb(122, 44, 44);
+  background-color: rgb(33, 33, 33);
   color: rgb(202, 209, 209);
   border: 1px solid rgba(122, 44, 44, 0);
   border-radius: .5em;
-  width: 50%;
-  font-size: 1rem;
+  width: 80%;
+  font-size: .6rem;
   cursor: pointer;
   letter-spacing: .070em;
   font-weight: 600;
-  transition: all .3s;
-
-
+  transition: all .2s;
+  -webkit-tap-highlight-color: transparent;
 }
+.submenu-btns:active {
+  box-shadow: 0 0 5px rgb(122, 44, 44);
+}
+
+.submenu-btns:hover {
+  color: #fff;
+  background-color: rgba(102, 102, 102, 0.284);
+  box-shadow: 0 0 5px rgb(122, 44, 44);
+}
+
+.link{
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+@media screen and (min-height: 415px){
+.headerText{
+  font-size: 2rem;
+}
+.menu-btns{
+  min-width: 2em;
+  font-size: .9em;
+}
+ }
+
+ @media screen and (min-height: 415px){
+  .headerText{
+    font-size: 2rem;
+  }
+  .menu-btns{
+    min-width: 2em;
+    font-size: .7em;
+  }
+}
+  @media screen and (min-width: 978px){
+    .App {
+      width: 50%;
+    }
+    .submenu-btns{
+      height: 4em;
+      text-align: center;
+    }
+    .information-container .info-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+   }

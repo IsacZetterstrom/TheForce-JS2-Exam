@@ -17,7 +17,6 @@ function Navigation () {
             <Link to="/Films"><button className="menu-btns">Films</button></Link>
         </ul>
         </div>
-
     )
 }
 export default Navigation;
