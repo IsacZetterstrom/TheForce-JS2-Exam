@@ -10,7 +10,6 @@ const Films = () => {
     },[]);
 
     const fetchFilms = async () =>  {
-        
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 1; i++) {
@@ -19,8 +18,8 @@ const Films = () => {
             currentPage++;
         }
         let result = await Promise.all(promises);
-        let results = result.map(data => data.results)
-        setFilmsBank([].concat(...results));
+        let stepTwoResult = result.map(data => data.results)
+        setFilmsBank([].concat(...stepTwoResult));
     }
     const runHandleClick = (filmInfo) => {
         setfilmBank (`<h3>${filmInfo.title}</h3>

@@ -10,7 +10,6 @@ const Planets = () => {
     },[]);
 
     const fetchPlanets = async () =>  {
-        
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 6; i++) {
@@ -19,8 +18,8 @@ const Planets = () => {
             currentPage++;
         }
         let result = await Promise.all(promises);
-        let results = result.map(data => data.results)
-        setPlanetsBank([].concat(...results));
+        let stepTwoResult = result.map(data => data.results)
+        setPlanetsBank([].concat(...stepTwoResult));
     }
     const runHandleClick = (planetInfo) => {
         setPlanetBank (`<h3>${planetInfo.name}</h3>

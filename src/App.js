@@ -3,8 +3,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //Pages
 import Navigation from './components/Navigation';
-import Header from './components/Header'
-import People from './components/People'
+import Header from './components/Header';
+import People from './components/People';
 import Planets from './components/Planets';
 import Home from './components/Home';
 import Starships from './components/Starships';

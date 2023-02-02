@@ -10,7 +10,6 @@ const Species = () => {
     },[]);
     
     const fetchFilms = async () =>  {
-        
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 4; i++) {
@@ -19,8 +18,8 @@ const Species = () => {
             currentPage++;
         }
         let result = await Promise.all(promises);
-        let results = result.map(data => data.results)
-        setSpeciesBank([].concat(...results));
+        let stepTwoResult = result.map(data => data.results)
+        setSpeciesBank([].concat(...stepTwoResult));
     }
     const runHandleClick = (specieInfo) => {
         setSpecieBank (`<h3>${specieInfo.name}</h3>
@@ -31,7 +30,6 @@ const Species = () => {
        <p>Eye color: ${specieInfo.eye_colors}</p>
        <p>average lifespan year: ${specieInfo.average_lifespan} years</p>
        `) 
-
    }
 
    return(

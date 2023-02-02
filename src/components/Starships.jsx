@@ -10,7 +10,6 @@ const Starships = () => {
     },[]);
     
     const fetchStarships = async () =>  {
-        
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 4; i++) {
@@ -19,8 +18,8 @@ const Starships = () => {
             currentPage++;
         }
         let result = await Promise.all(promises);
-        let results = result.map(data => data.results)
-        setStarshipsBank([].concat(...results));
+        let stepTwoResult = result.map(data => data.results)
+        setStarshipsBank([].concat(...stepTwoResult));
     }
     const runHandleClick = (starshipInfo) => {
         setStarshipBank (`<h3>${starshipInfo.name}</h3>
@@ -34,7 +33,6 @@ const Starships = () => {
        <p>Hyperdrive Rating: ${starshipInfo.hyperdrive_rating} </p>
        <p>Price: ${starshipInfo.cost_in_credits} $Space Dollar</p>
        `) 
-
    }
 
    return(

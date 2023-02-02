@@ -10,7 +10,6 @@ const Vehicles = () => {
     },[]);
     
     const fetchVehicles = async () =>  {
-        
         let promises = []
         let currentPage = 1;
         for (let i = 1; i <= 4; i++) {
@@ -19,8 +18,8 @@ const Vehicles = () => {
             currentPage++;
         }
         let result = await Promise.all(promises);
-        let results = result.map(data => data.results)
-        setVehiclesBank([].concat(...results));
+        let stepTwoResult = result.map(data => data.results)
+        setVehiclesBank([].concat(...stepTwoResult));
     }
     const runHandleClick = (vehicleInfo) => {
         setVehicleBank (`<h3>${vehicleInfo.name}</h3>
