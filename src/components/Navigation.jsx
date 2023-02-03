@@ -15,7 +15,6 @@ function Navigation () {
             <Link to="/Vehicles"><button className="menu-btns">Vehicles</button></Link>
             <Link to="/Starships"><button className="menu-btns">Starships</button></Link>
             <Link to="/Films"><button className="menu-btns">Films</button></Link>
-            {/* <Link to="/Search"><button className="menu-btns">Search</button></Link> */}
         </ul>
         </div>
     )

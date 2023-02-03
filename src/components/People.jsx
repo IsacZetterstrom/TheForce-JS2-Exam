@@ -4,10 +4,10 @@ import '../App.css';
 
 const People = () => {
     
-    const [ peopleBank, setPeopleBank ] = useState([]);
+    const [ peopleBank, setPeopleBank ] = useState([]); //Hooks för att spara datan som är hämtad från API
     const [ personBank, setpersonBank] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { //useEffect gör att fetchPeople körs.
         fetchPeople();
     },[]);
     
@@ -37,12 +37,13 @@ const People = () => {
     }
 
     return(
-        // omvandlar setpersonBank (html-mallen ovan) till html kod.
+        // omvandlar personBank (html-mallen ovan) till html kod.
         // skapar knappar av varje karaktär, och visar dess namn, för varje knapp 
         // körs map() på peopleBank och informationen från map(person) skickas in i runHandleClick och skrivs ut.
+        //dangerouslySetInnerHTML renderar ut htmlstrukturen till HTML-kod
         <>  
             <div className="information-container">
-            <div className="info-text" dangerouslySetInnerHTML={{__html: personBank}}></div> 
+            <div className="info-text" dangerouslySetInnerHTML={{__html: personBank}}></div>
             </div>
             <div className="subcatagory-container">
             {peopleBank.map((person) => <button className="people-subcategory submenu-btns" key={person.name} onClick={() => runHandleClick(person)}>{person.name}</button>)}       
