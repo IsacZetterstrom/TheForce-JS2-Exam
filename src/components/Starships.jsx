@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import '../App.css';
 
 const Starships = () => {
-    const [ StarshipsBank, setStarshipsBank ] = useState([]);
+    const [ starshipsBank, setStarshipsBank ] = useState([]);
     const [ starshipBank, setStarshipBank] = useState([]);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const Starships = () => {
             <div className="info-text" dangerouslySetInnerHTML={{__html: starshipBank}}></div>
             </div>
            <div className="subcatagory-container">
-            {StarshipsBank.map((starships) => <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}
+            {starshipsBank.map((starships) => <button className="starships-subcategory submenu-btns" key={starships.name} onClick={() => runHandleClick(starships)}>{starships.name}</button>)}
                
            </div>
        </>

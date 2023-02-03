@@ -17,7 +17,6 @@ import Films from './components/Films';
 function App() {
   return (
     <BrowserRouter>
-    
     <main className="App">
     <Header />
     <Navigation />
